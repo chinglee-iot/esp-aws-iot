@@ -102,10 +102,10 @@ MQTTAgentCommand_t * Agent_GetCommand( uint32_t blockTimeMs )
 
     if( !structRetrieved )
     {
-        //LogError( ( "No command structure available." ) );
+        LogError( ( "No command structure available." ) );
     } else {
-        //LogDebug( ( "Removed Command Context %d from pool",
-        //            ( int ) ( structToUse - commandStructurePool ) ) );
+        LogDebug( ( "Removed Command Context %d from pool",
+                    ( int ) ( structToUse - commandStructurePool ) ) );
     }
 
     return structToUse;

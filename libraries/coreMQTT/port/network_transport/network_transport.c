@@ -41,13 +41,6 @@ TlsTransportStatus_t xTlsConnect( NetworkContext_t* pxNetworkContext )
         }
         xRet = TLS_TRANSPORT_CONNECT_FAILURE;
     }
-    else
-    {
-        // /* set recv timeout (5 ms) */
-        // int opt = 5;
-        // ret = setsockopt( pxNetworkContext->pxTls->sockfd, SOL_SOCKET, SO_RCVTIMEO, &opt, sizeof(int) );
-        // LWIP_ASSERT("ret == 0", ret == 0);
-    }
 
     xSemaphoreGive(pxNetworkContext->xTlsContextSemaphore);
 
