@@ -128,8 +128,8 @@ bool Agent_ReleaseCommand( MQTTAgentCommand_t * pCommandToRelease )
         /* The send should not fail as the queue was created to hold every command
          * in the pool. */
         configASSERT( structReturned );
-        //LogDebug( ( "Returned Command Context %d to pool",
-        //            ( int ) ( pCommandToRelease - commandStructurePool ) ) );
+        LogDebug( ( "Returned Command Context %d to pool",
+                    ( int ) ( pCommandToRelease - commandStructurePool ) ) );
     }
 
     return structReturned;
