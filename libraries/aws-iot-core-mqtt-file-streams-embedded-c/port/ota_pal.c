@@ -437,7 +437,7 @@ OtaPalStatus_t otaPal_CheckFileSignature( AfrOtaJobDocumentFields_t * const pFil
     if( pucSignerCert == NULL )
     {
         LogError( ( "Cert read failed" ) );
-        result = OTA_PAL_COMBINE_ERR( OtaPalBadSignerCert, 0 );
+        result = OtaPalBadSignerCert;
         vPortFree( pvSigVerifyContext );
         goto end;
     }
@@ -464,7 +464,7 @@ OtaPalStatus_t otaPal_CheckFileSignature( AfrOtaJobDocumentFields_t * const pFil
         if( ret != ESP_OK )
         {
             LogError( ( "Partition mmap failed %d", ret ) );
-            result = OTA_PAL_COMBINE_ERR( OtaPalSignatureCheckFailed, 0 );
+            result = OtaPalSignatureCheckFailed;
             vPortFree( pvSigVerifyContext );
             goto end;
         }
